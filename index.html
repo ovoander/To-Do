@@ -1,52 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html class="bg-zinc-800 text-zinc-100" lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>To-Do List</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="flex items-center justify-center p-2.5">
-        <div
-            class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-rose-400 text-transparent bg-clip-text select-none">
-            To-Do
-        </div>
+      <div
+        class="select-none bg-gradient-to-r from-blue-400 to-rose-400 bg-clip-text text-6xl font-bold text-transparent"
+      >
+        To-Do
+      </div>
     </div>
-
-
 
     <div class="flex items-center p-2.5">
-        <input id="task-name"
-            class="ml-auto font-semibold focus:outline-none focus:bg-zinc-600 w-1/5 h-10 text-left bg-zinc-700 p-2.5 rounded-lg shadow-lg shadow-zinc-900 transition-colors"
-            type="text" placeholder="Title...">
-        <span
-            class="select-none ml-5 mr-auto bg-rose-400 active:bg-rose-500 font-semibold flex items-center p-2.5 h-10 rounded-lg cursor-pointer shadow-lg shadow-zinc-900"
-            onclick="newTask(true)">
-            Add
-        </span>
+      <input
+        id="task-name"
+        class="ml-auto h-10 w-1/5 rounded-lg bg-zinc-700 p-2.5 text-left font-semibold shadow-lg shadow-zinc-900 transition-colors focus:bg-zinc-600 focus:outline-none"
+        type="text"
+        placeholder="Title..."
+      />
+      <span
+        class="ml-5 mr-auto flex h-10 cursor-pointer select-none items-center rounded-lg bg-rose-400 p-2.5 font-semibold shadow-lg shadow-zinc-900 active:bg-rose-500"
+        onclick="newTask(true)"
+      >
+        Add
+      </span>
     </div>
     <div id="entries">
-        <div id="example-entry" hidden class="relative ml-96 border-l-2 border-zinc-100">
-            <div
-                class="flex items-center justify-center bg-zinc-700 m-5 p-2.5 w-1/5 rounded-lg shadow-lg shadow-zinc-900">
-                <ul class="text-2xl font-semibold">Test</ul>
-            </div>
+      <div
+        id="example-entry"
+        hidden
+        class="relative ml-96 border-l-2 border-zinc-100"
+      >
+        <div
+          class="m-5 flex w-1/5 items-center justify-center rounded-lg bg-zinc-700 p-2.5 shadow-lg shadow-zinc-900"
+        >
+          <ul class="text-2xl font-semibold">
+            Test
+          </ul>
         </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
 
     <script>
-        JSON.parse(window.localStorage.getItem('tasks')).forEach(task => {
-            renderTask(task)
-        });
+      JSON.parse(window.localStorage.getItem("tasks")).forEach((task) => {
+        renderTask(task);
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
