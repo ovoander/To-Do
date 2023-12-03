@@ -10,7 +10,7 @@
             rel="stylesheet"
         />
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+        <title>To-Do</title>
     </head>
     <style>
         * {
@@ -18,6 +18,7 @@
         }
     </style>
     <body>
+        <script src="script.js"></script>
         <div
             class="flex items-center justify-center border-b border-zinc-700 p-3"
         >
@@ -26,6 +27,18 @@
                 href="index.html"
                 >To-Do</a
             >
+        </div>
+        <div class="m-3 flex items-center justify-center p-3">
+            <input
+                class="w-1/5 rounded-xl bg-zinc-700 p-3 shadow-lg shadow-zinc-900 transition-[background-color,box-shadow] placeholder:text-zinc-500 hover:shadow-xl hover:shadow-zinc-900 focus:bg-zinc-600 focus:shadow-xl focus:shadow-zinc-900 focus:outline-none focus:placeholder:text-zinc-400"
+                type="text"
+                placeholder="Title..."
+            />
+            <input
+                class="m-3 cursor-pointer rounded-xl bg-indigo-400 p-3 shadow-lg shadow-zinc-900 transition-shadow hover:shadow-xl hover:shadow-zinc-900 active:bg-indigo-500 active:shadow-xl active:shadow-zinc-900"
+                type="submit"
+                value="Add"
+            />
         </div>
     </body>
 </html>
