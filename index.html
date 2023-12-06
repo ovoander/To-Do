@@ -16,10 +16,6 @@
     * {
       font-family: "Nunito Sans", sans-serif;
     }
-
-    *::selection {
-      background-color: #34d399;
-    }
   </style>
   <body>
     <div class="m-3 flex select-none items-center justify-center">
@@ -42,6 +38,11 @@
         value="Add"
         id="add-todo"
       />
+    </div>
+    <div class="flex items-center justify-center">
+      <div>
+        <li id="todos" class="rounded bg-zinc-700 p-2">Test</li>
+      </div>
     </div>
     <div class="flex items-center justify-center"></div>
     <script src="script.js"></script>
