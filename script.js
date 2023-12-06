@@ -1,2 +1,1 @@
-
-
+const addTodo = document.getElementById("add-todo");
