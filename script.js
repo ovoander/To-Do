@@ -1,15 +1,35 @@
-const input = document.getElementById("add-todo");
-const list = document.getElementById("list");
+const inputText = document.getElementById('todo-input')
+const inputButton = document.getElementById('add-todo')
+const todoList = document.getElementById('todo-list')
 
-function addTodo() {
-  const todoItem = document.createElement("li");
-  todoItem.textContent = input.value;
+const TODO_ELEMENT_STYLE = "rounded bg-zinc-700 p-2"
 
-  list.appendChild(todoItem);
+const todos = JSON.parse(window.localStorage.getItem('tasks')) || []
 
-  input.value = "";
+const createTodoElement = (text) => {
+  const todoElement = document.createElement('li')
+
+  todoElement.classList.add(...TODO_ELEMENT_STYLE.split(" "))
+  todoElement.innerText = text
+
+  return todoElement
 }
 
-input.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") addTodo();
-});
+todos.forEach((text) => {
+  const todoElement = createTodoElement(text);
+
+  todoList.appendChild(todoElement)
+})
+
+const onClick = () => {
+  const todoElement = createTodoElement(inputText.value);
+
+  todoList.appendChild(todoElement)
+
+  todos.push(inputText.value)
+
+  window.localStorage.setItem('tasks', JSON.stringify(todos))
+};
+
+inputButton.onclick = onClick;
+
